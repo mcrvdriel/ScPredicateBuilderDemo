@@ -1,0 +1,54 @@
+﻿@model ScPredicateBuilderApp.Models.HomeModel
+<div>
+	<h1>@Model.Title</h1>
+	<p>@Model.Description</p>
+	<br/>
+	<h2>Products</h2>
+	<table style="border: solid 1px">
+		<thead>
+			<tr style="margin: 0">
+				<th style="border: solid 1px">Image</th>
+				<th style="border: solid 1px">Name</th>
+				<th style="border: solid 1px">Description</th>
+				<th style="border: solid 1px">Serial</th>
+				<th style="border: solid 1px">Released</th>
+				<th style="border: solid 1px">Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var product in Model.Products)
+			{
+				<tr style="margin: 0">
+					<td style="border: solid 1px"><img src="@product.ImageSrc" alt="@product.ImageAlt" height="16"/></td>
+					<td style="border: solid 1px">@product.ProductName</td>
+					<td style="border: solid 1px">@product.Description</td>
+					<td style="border: solid 1px">@product.SerialNumber</td>
+					<td style="border: solid 1px">@product.Released</td>
+					<td style="border: solid 1px">@product.Price</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+	<br/>
+	<br/>
+	<h2>Services</h2>
+	<table style="border: solid 1px">
+		<thead>
+			<tr style="margin: 0">
+				<th style="border: solid 1px">Name</th>
+				<th style="border: solid 1px">Description</th>
+				<th style="border: solid 1px">Rate</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var service in Model.Services)
+			{
+				<tr style="margin: 0">
+					<td style="border: solid 1px">@service.ServiceName</td>
+					<td style="border: solid 1px">@service.Description</td>
+					<td style="border: solid 1px">@service.Rate</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
